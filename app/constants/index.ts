@@ -1,3 +1,4 @@
+import { Payment } from "@/types";
 import {
   FiHome,
   FiUser,
