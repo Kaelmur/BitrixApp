@@ -1,4 +1,4 @@
-import { RepeatOrderDeal } from "@/types";
+import { Deal, RepeatOrderDeal } from "@/types";
 
 const BITRIX_WEBHOOK = process.env.NEXT_PUBLIC_BITRIX_WEBHOOK!;
 
@@ -32,8 +32,8 @@ export async function createContactInBitrix(name: string, email: string) {
   });
 }
 
-export async function getDeals() {
-  return await bitrixFetch(
+export async function getDeals(): Promise<Deal[]> {
+  return await bitrixFetch<never, Deal[]>(
     "crm.deal.list.json?select[]=ID&select[]=TITLE&select[]=DATE_CREATE&select[]=STAGE_ID"
   );
 }
