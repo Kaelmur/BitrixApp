@@ -1,3 +1,4 @@
+import { UserProfile } from "@/types";
 import Image from "next/image";
 
 function ProfileCard({ user }: { user: UserProfile }) {
