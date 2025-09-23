@@ -3,12 +3,13 @@ import { updateUserProfile } from "@/lib/actions/user.action";
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await context.params;
     const body = await req.json();
 
-    await updateUserProfile(Number(params.id), body);
+    await updateUserProfile(Number(id), body);
 
     return NextResponse.json({ success: true });
   } catch (error) {
