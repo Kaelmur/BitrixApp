@@ -42,7 +42,7 @@ function PaymentCard() {
 
   return (
     <Paper elevation={3} className="p-6 rounded-2xl lg:col-span-3">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
         <div className="flex items-center mb-6">
           <span className="w-1 h-6 bg-blue-500 rounded mr-3"></span>
           <h2 className="text-xl font-bold">Платежи</h2>
